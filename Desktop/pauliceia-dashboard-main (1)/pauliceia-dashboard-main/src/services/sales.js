@@ -175,6 +175,7 @@ export const salesService = {
 
             // Clean data for insertion (remove non-schema fields like produto_nome)
             // We clone objects to avoid modifying the original array if it's used elsewhere
+            console.log('🧹 Cleaning data for import (removing extra columns)...')
             const cleanedData = vendasData.map(({ produto_nome, ...rest }) => rest)
 
             // Insert in batches (Supabase has limits)
